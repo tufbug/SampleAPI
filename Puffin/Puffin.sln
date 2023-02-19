@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puffin", "Puffin\Puffin.csproj", "{7E9263E9-B003-4B15-94E8-489615F38D39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E9263E9-B003-4B15-94E8-489615F38D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9263E9-B003-4B15-94E8-489615F38D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9263E9-B003-4B15-94E8-489615F38D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9263E9-B003-4B15-94E8-489615F38D39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8E5E71D-C0C2-4DC9-B557-46237DF572AC}
+	EndGlobalSection
+EndGlobal
