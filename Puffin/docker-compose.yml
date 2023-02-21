@@ -1,0 +1,18 @@
+---
+version: '3.9'
+
+volumes:
+  puffin-data:
+
+services:
+  mssql:
+    build: ./mssql-image-conf
+    volumes:
+    - puffin-data:/var/lib/mssql
+    image: puffin-mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=dmaz15haw@K@
+    stdin_open: true
+    ports:
+      - 1433:1433

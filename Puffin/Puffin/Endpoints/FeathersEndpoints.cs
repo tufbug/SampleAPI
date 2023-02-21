@@ -9,20 +9,25 @@ namespace Puffin.Endpoints
 	{
 		public static void MapFeathersEndpoints(this WebApplication app)
 		{
-			app.MapGet("/feathers", List);
-			app.MapGet("/feathers/{id}", Get);
-			app.MapPost("feathers", Create);
-			app.MapPut("feathers", Update);
-			app.MapDelete("feathers/{id}", Delete);
+			app.MapGet("/feathers", List)
+				.WithName("ListFeathers").WithOpenApi();
+			app.MapGet("/feathers/{id}", Get)
+				.WithName("GetFeather").WithOpenApi();
+			app.MapPost("feathers", Create)
+				.WithName("AddFeather").WithOpenApi();
+			app.MapPut("feathers", Update)
+				.WithName("UpdateFeather").WithOpenApi();
+			app.MapDelete("feathers/{id}", Delete)
+				.WithName("DeleteFeather").WithOpenApi();
 		}
 
 		public static async Task<IResult> List(PuffinDbContext context)
 		{
-			// var result = await context.Feathers.ToListAsync();
-			return Results.Ok();
+			var result = await context.Feathers.ToListAsync();
+			return Results.Ok(result);
 		}
 
-		public static async Task<IResult> Get(PuffinDbContext context, int id)
+		public static async Task<IResult> Get(PuffinDbContext context, Guid id)
 		{
 			return await context.Feathers.FindAsync(id) is Feather feather
 				? Results.Ok(feather)
@@ -53,7 +58,7 @@ namespace Puffin.Endpoints
 			return Results.NoContent();
 		}
 
-        public static async Task<IResult> Delete(PuffinDbContext context, int id)
+        public static async Task<IResult> Delete(PuffinDbContext context, Guid id)
         {
 			if (await context.Feathers.FindAsync(id) is Feather feather)
 			{
